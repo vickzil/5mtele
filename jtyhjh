@@ -1,0 +1,55 @@
+<div class="col-12 col-sm-12 col-lg-12">
+                <div class="card">
+                  <div class="card-body p-5">
+                    <div class="row">
+                      <div class="col-md-5 text-center d-flex justify-content-center align-items-center account-title">
+                        <div class="h1 m-0 text-muted">Account Details: </div>
+                      </div>
+                      <div class="col-md-7">
+                        <div class="account-boxes">
+                          <div class="account-box">
+                            <div class="text-success mb-4">Current Amount Recharged</div>
+                            <div class="text-success mb-4">Account Status</div>
+                            <div class="text-success mb-4">Account Duration</div>
+                            <div class="text-success mb-4">Account Time Remaining</div>
+                          </div>
+                          <div class="account-box">
+
+                            <div class="text-inherit mb-4 h4"><span>&#8358;</span> 
+                              <?php echo $user['balance']; ?>
+                            </div>
+
+                              <?php if ($user['balance'] == 0) { ?>
+                                <div class="text-light mb-4 h4 badge bg-gray">Not Active</div>
+                                <div class="badge bg-warning mb-2" id="exampleModal4">
+                                Please Recharge !
+                              </div>
+                             <?php } else { ?>
+
+                              <div class="text-light mb-4 h4 badge bg-success">Active</div>
+
+                            <?php } ?>
+
+                            <?php if ($user['balance'] == 0) { ?>
+                                <div class="text-light mb-4 h4"><span class="tag tag-gray text-light"><?php echo $user['accountduration']; ?></span></div>
+                             <?php } else { ?>
+
+                              <div class="text-inherit mb-4 h4"><span class="tag tag-warning text-dark"><?php echo $user['accountduration']; ?></span></div>
+
+                            <?php } ?>
+
+                            <?php if ($user['balance'] == 0) { ?>
+                                <div class="text-light mb-4 h4"><span class="tag tag-gray text-light"><?php echo $user['accountexpire']; ?></span></div>
+                             <?php } else { ?>
+
+                              <div class="text-inherit mb-4 h4"><span class="tag tag-warning text-dark" id="timing"><?php echo $user['accountexpire']; ?></span></div>
+
+                            <?php } ?>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
